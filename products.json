@@ -1,0 +1,151 @@
+{
+    "shirt_1": {
+        "name": "「井田」拼接襯衫", 
+        "price": "1,190",
+        "category": "apparel",
+        "subCategory": "top",
+        "description": "利用不同深淺藍色舊布以「井」字型格塊拼接，象徵水井村農田阡陌交錯。每一件都是手工裁切，絕對不撞款的文化鎧甲。",
+        "sizes":["S", "M", "L", "XL"], 
+        "colors":["#1A1A1A", "#D4AF37"],
+        "mainImg": "./img/frontal_shirt_main.jpg",
+        "thumbnails":[
+            "./img/frontal_shirt_1(1).png",
+            "./img/back_shirt_1.png"
+        ]
+    },
+    "village_tee_1": {
+        "name": "「村靈銘刻」地景圖騰短 T",
+        "price": "990",
+        "category": "apparel",
+        "subCategory": "top",
+        "description": "這款重磅短 T 以前胸簡約的「井」字繡標為起點，背後則是完整的水井村地景縮影。精緻的線條勾勒出生命之源——「古井」，以及象徵守護土地的「靈龜」。下擺點綴在地花卉刺繡，象徵堅韌中帶溫柔的生命力。",
+        "sizes": ["S", "M", "L", "XL", "2XL"],
+        "colors": ["#1A1A1A"],
+        "mainImg": "./img/village_tee_front.png",
+        "hoverImg": "./img/village_tee_back.png",
+        "thumbnails": [
+            "./img/village_tee_1.png",
+            "./img/village_tee_2.png"
+        ]
+    },
+    "vest_1": {
+        "name": "「井匠」工裝丹寧夾克",
+        "price": "1,290",
+        "category": "apparel",
+        "subCategory": "top",
+        "description": "以早期鑿井工人的工作服為靈感，採用重磅回收丹寧布料製作。多口袋設計提供實用的收納空間，領口處故意保留的抽絲毛邊，象徵在堅硬地層中開拓水源的頑強精神。",
+        "sizes": ["F (單一尺寸)"],
+        "colors": ["#2C3E50"],
+        "mainImg": "./img/vest_front_main.png",
+        "thumbnails":[
+            "./img/vest_front.png",
+            "./img/vest_back.png"
+        ]
+    },
+    "hat_1": {
+        "name": "「座標」刺繡守護老帽",
+        "price": "290",
+        "category": "apparel",
+        "subCategory": "top",
+        "description": "正面刺有精緻的金線井字村徽，側邊隱藏著水井村的地景座標。布料經過特殊洗水處理，呈現出歲月磨練後的溫潤色澤，是守護靈感與思緒的文化頭盔。",
+        "mainImg": "./img/hat_front(1).png",
+        "hoverImg": "./img/hat_detail.png",
+        "sizes":["21吋", "22吋", "24吋"], 
+        "colors":["#1A1A1A", "#D4AF37"],
+        "thumbnails":[
+            "./img/hat_front(1).png",
+            "./img/hat_detail.png"
+        ]
+    },
+    "pants_1": {
+        "name": "「阡陌步跡」大地拼接長褲",
+        "price": "590",
+        "category": "apparel",
+        "subCategory": "bottom",
+        "description": "褲腳兩側細膩描繪了村落花卉與阡陌農田的交織線條。多裁片拼接工法模仿了水井村錯落有致的地景結構，寬鬆的剪裁讓每一步都如同踩在故鄉土地般自在紮實。",
+        "mainImg": "./img/pants_1.png",
+        "hoverImg": "./img/pants_1.png",
+        "sizes":["S", "M", "L"], 
+        "colors":["#1A1A1A", "#D4AF37"],
+        "thumbnails":[
+            "./img/pants_1_front.png",
+            "./img/pants_back.png"
+        ]
+    },
+    "sock_1": {
+        "name": "「地脈」刺繡精梳棉襪",
+        "price": "79",
+        "category": "apparel",
+        "subCategory": "bottom",
+        "description": "在足部銘刻地脈的記憶。襪身兩側分別刺有生命古井與守護靈龜，搭配舒適的厚磅精梳棉，保護使用者在現代城市的街道上，依然能踏出具備文化底氣的步伐。",
+        "mainImg": "./img/sock_1.png",
+        "hoverImg": "./img/pants_back.png",
+        "sizes":["XS", "S", "M", "L"], 
+        "colors":["#1A1A1A", "#D4AF37"],
+        "thumbnails":[
+            "./img/sock_1.png",
+            "./img/sock_2.png"
+        ]
+    },
+    "handbag_1": {
+        "name": "「井底之光」解構提袋",
+        "price": "35",
+        "category": "bag",
+        "subCategory": "handbag",
+        "mainImg": "./img/handbag_1.png",
+        "description": "大面積舊布拼接，提把採用粗麻繩模擬水井取水繩索意象。",
+        "sizes": ["25 X 35 cm (單一尺寸)"],
+        "colors":["#FFFFFF", "#000000"],
+        "thumbnails":[
+            "./img/handbag_1.png",
+            "./img/handbag_2.png"
+        ]
+    },
+    "backpack_1": {
+        "name": "「巡守」多功能背包",
+        "price": "749",
+        "category": "bag",
+        "subCategory": "backpack",
+        "mainImg": "./img/backpack_1.png",
+        "description": "結合永續帆布與在地織帶，耐用且具備極佳的收納空間。",
+        "sizes": ["15L", "20L", "25L"],
+        "colors":["#000000", "#FFFFFF", "#808080"],
+        "thumbnails":[
+            "./img/backpack_1 (2).png",
+            "./img/backpack_2 (2).png",
+            "./img/backpack_3.png"
+        ]
+    },
+    "charm_1": {
+        "name": "「村靈銘刻」金線刺繡吊飾",
+        "price": "99",
+        "category": "lifestyle",
+        "subCategory": "charm",
+        "description": "圓形細緻刺繡結合金屬鏈條，圖騰包含守護靈馬與在地花卉，象徵將村落的祝福隨身配戴。",
+        "mainImg": "./img/charm_1.png",
+        "sizes": ["7 X 7 cm", "9 X 9 cm"],
+        "colors":["#808080"],
+        "thumbnails": ["./img/charm_1.png", "./img/charm_2.png"]
+    },
+    "wallet_1": {
+        "name": "「古井」拼接短夾",
+        "price": "290",
+        "category": "lifestyle",
+        "subCategory": "wallet",
+        "description": "採用井字拼接工法製作，內層具備多層卡槽，兼具文化底蘊與日常實用性。",
+        "mainImg": "./img/wallet_1.png",
+        "sizes": ["11 X 9 cm", "12 X 10 cm"],
+        "colors":["#F5F5DC","#808080"],
+        "thumbnails": ["./img/wallet_1.png", "./img/wallet_2.png"]
+    },
+    "doll_1": {
+        "name": "「小井衛」永續再生布偶",
+        "price": "890",
+        "category": "lifestyle",
+        "subCategory": "doll",
+        "description": "利用製作衣服剩餘的碎布料拼接而成，每一隻玩偶的紋理都是獨一無二的，賦予布料第二次生命。",
+        "mainImg": "./img/doll_1.png",
+        "thumbnails": ["./img/doll_1.png"]
+    }
+}
+    

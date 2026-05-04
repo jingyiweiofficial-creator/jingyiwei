@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>包袋類 | 井衣衛</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/category.css"> <!-- 複用分類頁樣式 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* 針對包袋頁面的特別微調 */
+        .bags-container {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-top: 50px;
+        }
+        .bag-section {
+            flex: 1;
+            max-width: 500px;
+        }
+        .section-title {
+            color: var(--gold-primary);
+            border-bottom: 1px solid var(--gold-primary);
+            padding-bottom: 10px;
+            margin-bottom: 25px;
+            text-align: center;
+            font-size: 22px;
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 導覽列 -->
+    <header id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo"><img src="./img/Logo_topl (1).png"></a>
+            <ul class="nav-menu">
+            <li class="dropdown">
+                <a href="#">商品 <span>▼</span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="category.html">穿搭類 (文化的鎧甲)</a></li>
+                    <li><a href="bags.html">包袋類 (記憶的載體)</a></li>
+                    <li><a href="lifestyle.html">生活小物件</a></li>
+                    <li><a href="#">居家裝飾</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#">關於井衣衛 <span>▼</span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">水井村鑿井故事</a></li>
+                    <li><a href="#">永續再生理念</a></li>
+                    <li><a href="#">我們的團隊</a></li>
+                </ul>
+            </li>
+            <li><a href="#">聯絡我們</a></li>
+        </ul>
+        </div>
+    </header>
+        </div>
+    </header>
+
+    <main class="category-main">
+        <h1 class="page-title">包袋類 <small>記憶的載體</small></h1>
+
+        <div class="bags-container">
+            <!-- 手提包/袋 區塊 -->
+            <section class="bag-section">
+                <h2 class="section-title">手提袋 / 包 <small>HANDBAGS</small></h2>
+                <div class="product-grid" id="handbag-group" style="grid-template-columns: 1fr;">
+                    <!-- JS 會在這裡產生手提包商品 -->
+                </div>
+            </section>
+
+            <!-- 背包 區塊 -->
+            <section class="bag-section">
+                <h2 class="section-title">背包 <small>BACKPACKS</small></h2>
+                <div class="product-grid" id="backpack-group" style="grid-template-columns: 1fr;">
+                    <!-- JS 會在這裡產生背包商品 -->
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="./js/script.js"></script>
+    <script>
+        // 簡單的 JS 抓取邏輯
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('products.json')
+                .then(response => response.json())
+                .then(data => {
+                    const handbagGroup = document.getElementById('handbag-group');
+                    const backpackGroup = document.getElementById('backpack-group');
+
+                    Object.keys(data).forEach(id => {
+                        const p = data[id];
+                        if (p.category === 'bag') {
+                            const itemHTML = `
+                                <a href="product.html?id=${id}" class="category-item">
+                                    <div class="item-card">
+                                        <div class="item-img-box">
+                                            <img src="${p.mainImg}" alt="${p.name}">
+                                        </div>
+                                        <div class="item-info">
+                                            <h3>${p.name}</h3>
+                                            <p class="item-price" style="color: #888; font-size: 13px;">${p.description || ''}</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            `;
+
+                            if (p.subCategory === 'handbag') {
+                                handbagGroup.innerHTML += itemHTML;
+                            } else if (p.subCategory === 'backpack') {
+                                backpackGroup.innerHTML += itemHTML;
+                            }
+                        }
+                    });
+                });
+        });
+    </script>
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-info">
+                <p>&copy; 2026 井衣衛 JING YI WEI. 雲林水井村在地文化與永續衣著再生計畫</p>
+            </div>
+            <div class="footer-social">
+                <span>追蹤我們：</span>
+                <!-- ★ 請把下面的連結換成你們真正的 IG 網址 ★ -->
+                <a href="https://www.instagram.com/jingyiwei_official" target="_blank" class="ig-icon">
+                    <i class="fa-brands fa-instagram"></i> <!-- 這裡用 fa-brands 會更精準 -->
+                </a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

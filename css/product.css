@@ -1,0 +1,183 @@
+/* 商品頁整體背景與版面 */
+.product-detail-section {
+    padding-top: 120px;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #2a2a2a, #121212);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.product-layout {
+    display: flex;
+    gap: 50px;
+    width: 80%;
+    max-width: 1200px;
+}
+
+/* ======== 左側圖片區 ======== */
+.product-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* 放大鏡容器 (重要機制) */
+.zoom-container {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* 保持正方形，可依需求調整 */
+    background-color: #d8f5a2; /* 預設底色，對應你截圖的綠色 */
+    border-radius: 12px;
+    overflow: hidden; /* 把放大超出邊界的圖片隱藏 */
+    position: relative;
+    cursor: crosshair; /* 滑鼠變成十字游標 */
+    background-color: transparent; 
+}
+
+.zoom-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* 確保圖片不變形 */
+    pointer-events: none; /* 讓滑鼠事件直接作用在外層容器 */
+    transition: transform 0.1s ease; /* 讓放大縮小有一點平滑感 */
+    background-color: transparent; 
+}
+
+/* 下方縮圖 */
+.thumbnail-container {
+    display: flex;
+    gap: 15px;
+}
+
+.thumbnail-container img {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    object-fit: cover;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border 0.3s;
+    background-color: #d8f5a2;
+}
+
+.thumbnail-container img:hover, .thumbnail-container img.active {
+    border: 2px solid var(--gold-primary);
+}
+
+/* ======== 右側資訊區 ======== */
+.product-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    padding-top: 20px;
+}
+
+.product-right h1 {
+    font-size: 36px;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.divider {
+    width: 100%;
+    height: 1px;
+    background: dotted 2px #555;
+    margin-bottom: 30px;
+}
+
+.description {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #ccc;
+    margin-bottom: 40px;
+}
+
+.product-options p {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.color-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 60px;
+}
+
+.color-options {
+    display: flex;
+    gap: 15px;
+}
+
+.color-dot {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+}
+
+/* 訂購按鈕 */
+.order-btn {
+    align-self: flex-end;
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    transition: color 0.3s;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+}
+
+.order-btn:hover {
+    color: var(--gold-primary);
+}
+
+/* ======== 尺寸按鈕設計 ======== */
+.size-section {
+    margin-bottom: 30px;
+}
+
+.size-options {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+    flex-wrap: wrap; /* 尺寸太多時自動換行 */
+}
+
+/* 尺寸按鈕基本樣式 */
+.size-btn {
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid #555;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+/* 滑鼠移過去的特效 */
+.size-btn:hover {
+    border-color: var(--gold-primary);
+    color: var(--gold-primary);
+}
+
+/* ★ 被選中時的樣式 (變成金色方塊) */
+.size-btn.active {
+    background-color: var(--gold-primary);
+    color: #121212; /* 深色字體，讓字在金底上更清楚 */
+    border-color: var(--gold-primary);
+    font-weight: bold;
+}
+
+.product-price-display {
+    font-size: 28px;
+    color: var(--gold-primary);
+    font-weight: bold;
+    margin: 10px 0 20px 0;
+    letter-spacing: 1px;
+}

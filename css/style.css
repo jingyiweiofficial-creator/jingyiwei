@@ -1,0 +1,394 @@
+/* CSS 變數：深色與金色主題 */
+:root {
+    --bg-color: #121212;
+    --nav-bg: rgba(18, 18, 18, 0.85); /* 稍微透明一點，搭配 JS 使用 */
+    --gold-primary: #D4AF37;
+    --gold-hover: #F9E596;
+    --text-light: #E0E0E0;
+    --text-dark: #121212;
+}
+
+/* 基礎重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-light);
+    overflow-x: hidden;
+}
+
+/* ================= 導覽列 Navbar ================= */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100px;
+    background-color: var(--nav-bg);
+    border-bottom: 1px solid transparent; 
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    
+    /* 這裡原本的 display: flex 和 padding 都要刪掉 */
+    display: block; 
+    padding: 0; 
+}
+
+/* 新增：控制導覽列內容的容器 */
+.nav-container {
+    max-width: 1200px; /* ★ 重要：設定跟下方商品區塊一樣的最大寬度 */
+    margin: 0 auto;    /* ★ 重要：讓這個容器居中 */
+    height: 100%;
+    display: flex;
+    justify-content: space-between; /* 讓 Logo 在左，選單在右 */
+    align-items: center;
+    padding: 0 20px;   /* 留一點點左右邊距，避免貼死 */
+}
+
+/* 當網頁往下捲動時，透過 JS 加上的 class */
+header.scrolled {
+    border-bottom: 1px solid var(--gold-primary);
+    background-color: rgba(18, 18, 18, 0.98);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* 新增：Logo 圖片設定 */
+.logo {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.logo img {
+    height: 95px;  /* 👈 這裡原本是 60px，你可以改成 80px ~ 90px 試試看 */
+    width: auto;
+    object-fit: contain;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-menu > li {
+    position: relative;
+    padding: 20px 0;
+}
+
+.nav-menu a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.nav-menu a:hover {
+    color: var(--gold-primary);
+}
+
+/* 下拉選單 */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #1A1A1A;
+    border: 1px solid var(--gold-primary);
+    list-style: none;
+    min-width: 180px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.nav-menu li:hover .dropdown-menu {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+.dropdown-menu li {
+    border-bottom: 1px solid #333;
+}
+
+.dropdown-menu li:last-child {
+    border-bottom: none;
+}
+
+.dropdown-menu a {
+    padding: 12px 20px;
+    display: block;
+    font-size: 14px;
+}
+
+.dropdown-menu a:hover {
+    background-color: var(--gold-primary);
+    color: var(--text-dark);
+}
+
+/* ================= 英雄區塊 (主視覺) ================= */
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 80px;
+    background: radial-gradient(circle at center, #2a2a2a 0%, #121212 70%);
+}
+
+.slogan {
+    color: var(--gold-primary);
+    margin-bottom: 40px;
+    font-size: 24px;
+    letter-spacing: 3px;
+}
+
+.showcase-container {
+    display: flex;
+    gap: 60px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 翻轉卡片設計 */
+.flip-card {
+    background-color: transparent;
+    width: 300px;
+    height: 400px;
+    perspective: 1000px;
+    text-decoration: none;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    border: 2px solid var(--gold-primary);
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+    box-shadow: 0 0 25px rgba(212, 175, 55, 0.6);
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #222;
+}
+
+.flip-card-back {
+    transform: rotateY(180deg);
+    background-color: #1a1a1a;
+}
+
+.placeholder-text {
+    color: var(--text-light);
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+.detail-text {
+    color: var(--gold-primary);
+    font-size: 14px;
+}
+
+.gold-icon {
+    font-size: 50px;
+    color: var(--gold-primary);
+}
+
+/* ================= 內容擴充區塊 ================= */
+.info-section {
+    padding: 100px 10%;
+    text-align: center;
+    border-top: 1px solid #333;
+}
+
+.info-section h2 {
+    color: var(--gold-primary);
+    margin-bottom: 20px;
+    font-size: 32px;
+}
+
+.info-section p {
+    line-height: 1.8;
+    font-size: 18px;
+    color: #aaa;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translate(-50%, -10px); }
+    to { opacity: 1; transform: translate(-50%, 0); }
+}
+
+/* ================= 商品圖片設定 ================= */
+/* 請確保 style.css 最下方有這段 */
+.product-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    border-radius: 6px; 
+    pointer-events: none; 
+}
+
+/* 為了讓圖片漂亮填滿，我們稍微修改一下正反面的背景色和內距 */
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 6px;
+    display: flex; /* 保留 flex */
+    /* 移除原本的 padding 等設定，讓圖片可以貼齊邊緣 */
+    background-color: transparent; 
+}
+/* ================= 頁尾 Footer 樣式 ================= */
+.site-footer {
+    background-color: #0a0a0a; /* 比背景更深一點的顏色 */
+    padding: 40px 0;
+    border-top: 1px solid #333;
+    margin-top: 80px; /* 跟上方內容保持距離 */
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.footer-info p {
+    color: #666;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.footer-social {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: #aaa;
+    font-size: 14px;
+}
+
+/* IG 圖標本體樣式 */
+.ig-icon {
+    color: var(--gold-primary); /* 使用你的金色變數 */
+    font-size: 28px; /* 圖標大小 */
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+/* 滑鼠移上去變亮金色並稍微放大 */
+.ig-icon:hover {
+    color: var(--gold-hover);
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.5));
+}
+
+/* ================= 理念輪播區塊 ================= */
+.spirit-section {
+    padding: 100px 20px;
+    background-color: #121212;
+    text-align: center;
+}
+
+.spirit-title {
+    color: var(--gold-primary);
+    font-size: 32px;
+    margin-bottom: 50px;
+    letter-spacing: 3px;
+}
+
+.slider-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* 金色圓形按鈕 */
+.slider-btn {
+    background-color: var(--gold-primary);
+    color: #121212;
+    border: none;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+    flex-shrink: 0; /* 防止按鈕被擠壓 */
+}
+
+.slider-btn:hover {
+    background-color: var(--gold-hover);
+    transform: scale(1.1);
+}
+
+.slider-content {
+    flex: 1;
+}
+
+.spirit-image-wrapper {
+    width: 100%;
+    aspect-ratio: 16 / 9; /* 保持精緻的寬比例 */
+    background-color: #222;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 30px;
+    border: 1px solid #333;
+}
+
+.spirit-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.5s ease; /* 換圖時的淡入效果 */
+}
+
+.spirit-text {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #ccc;
+    max-width: 600px;
+    margin: 0 auto;
+    min-height: 3em; /* 防止文字高度不同造成跳動 */
+}

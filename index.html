@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>井衣衛 JING YI WEI</title>
+    <!-- 引入外部的 CSS 檔案 -->
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <!-- 頂部導覽列 -->
+    <header id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="./img/Logo_topl (1).png" alt="井衣衛 Logo">
+            </a>
+            
+            <ul class="nav-menu">
+                <li class="dropdown">
+                    <a href="#">商品 <span>▼</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="category.html">穿搭類 (文化的鎧甲)</a></li>
+                        <li><a href="bags.html">包袋類 (記憶的載體)</a></li>
+                        <li><a href="lifestyle.html">生活小物件</a></li>
+                        <li><a href="#">居家裝飾</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#">關於井衣衛 <span>▼</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">水井村鑿井故事</a></li>
+                        <li><a href="#">永續再生理念</a></li>
+                        <li><a href="#">我們的團隊</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">聯絡我們</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- 英雄區塊 (主視覺商品展示) -->
+    <section class="hero-section">
+        <div class="slogan">將水井村的鑿井精神，穿在身上。</div>
+        
+        <div class="showcase-container">
+            <!-- 第一件：新出的「村靈銘刻」 -->
+            <a href="product.html?id=village_tee_1" class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="./img/village_tee_1.png" alt="村靈銘刻正面" class="product-img">
+                    </div>
+                    <div class="flip-card-back">
+                        <img src="./img/village_tee_2.png" alt="村靈銘刻背面" class="product-img">
+                    </div>
+                </div>
+            </a>
+
+            <!-- 第二件：鑿井人丹寧背心 -->
+            <a href="product.html?id=vest_1" class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="./img/vest_back.png" alt="外套背面" class="product-img">
+                    </div>
+                    <div class="flip-card-back">
+                        <img src="./img/vest_front.png" alt="外套正面" class="product-img">
+                    </div>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- 品牌理念文字區塊 -->
+    <section class="info-section">
+        <h2>讓每一件衣服，都成為文化的鎧甲</h2>
+        <p>「井衣衛」不只是服飾品牌，而是一場關於土地、記憶與永續的社會運動。我們堅持零廢棄原則，透過將廢棄布料再造成穿搭單品，讓水井村的鑿井韌性，透過你的穿搭被更多人看見。</p>
+    </section>
+
+    <!-- ★ 新增：理念輪播區塊 ★ -->
+    <section class="spirit-section">
+        <h2 class="spirit-title">井衣衛守護著...</h2>
+        
+        <div class="slider-container">
+            <!-- 左按鈕 -->
+            <button class="slider-btn prev" id="prevSpirit">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+
+            <!-- 輪播內容 -->
+            <div class="slider-content">
+                <div class="spirit-image-wrapper">
+                    <img id="spiritImg" src="./img/spirit1.png" alt="守護理念">
+                </div>
+                <p id="spiritDesc" class="spirit-text">正在載入理念...</p>
+            </div>
+
+            <!-- 右按鈕 -->
+            <button class="slider-btn next" id="nextSpirit">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+    </section>
+
+    <!-- 頁尾 -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-info">
+                <p>&copy; 2026 井衣衛 JING YI WEI. 雲林水井村在地文化與永續衣著再生計畫</p>
+            </div>
+            <div class="footer-social">
+                <span>追蹤我們：</span>
+                <a href="https://www.instagram.com/jingyiwei_official" target="_blank" class="ig-icon">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript 放在最後面 -->
+    <script src="./js/script.js"></script>
+</body>
+</html>

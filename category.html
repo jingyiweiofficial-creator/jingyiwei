@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>穿搭類 | 井衣衛</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/category.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <!-- 導覽列 (記得使用你剛修改完、有 nav-container 的版本) -->
+    <header id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo"><img src="./img/Logo_topl (1).png"></a>
+            <ul class="nav-menu">
+            <li class="dropdown">
+                <a href="#">商品 <span>▼</span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="category.html">穿搭類 (文化的鎧甲)</a></li>
+                    <li><a href="bags.html">包袋類 (記憶的載體)</a></li>
+                    <li><a href="lifestyle.html">生活小物件</a></li>
+                    <li><a href="#">居家裝飾</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#">關於井衣衛 <span>▼</span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">水井村鑿井故事</a></li>
+                    <li><a href="#">永續再生理念</a></li>
+                    <li><a href="#">我們的團隊</a></li>
+                </ul>
+            </li>
+            <li><a href="#">聯絡我們</a></li>
+        </ul>
+        </div>
+    </header>
+        </div>
+    </header>
+
+    <main class="category-main">
+        <h1 class="page-title">穿搭類 <small>文化的鎧甲</small></h1>
+
+        <!-- 上身裝扮區塊 -->
+        <section class="category-group">
+            <div class="group-header">
+                <h2>上身裝扮 <small>TOPWEAR</small></h2>
+                <a href="#" class="view-more">查看更多 +</a>
+            </div>
+            <div class="product-grid" id="top-group">
+                <!-- JS 會自動在這裡產生 3 個上身商品 -->
+            </div>
+        </section>
+
+        <!-- 下身裝扮區塊 -->
+        <section class="category-group">
+            <div class="group-header">
+                <h2>下身裝扮 <small>BOTTOMWEAR</small></h2>
+                <a href="#" class="view-more">查看更多 +</a>
+            </div>
+            <div class="product-grid" id="bottom-group">
+                <!-- JS 會自動在這裡產生 3 個下身商品 -->
+            </div>
+        </section>
+    </main>
+
+    <script src="./js/script.js"></script>
+    <script src="./js/category.js"></script>
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-info">
+                <p>&copy; 2026 井衣衛 JING YI WEI. 雲林水井村在地文化與永續衣著再生計畫</p>
+            </div>
+            <div class="footer-social">
+                <span>追蹤我們：</span>
+                <!-- ★ 請把下面的連結換成你們真正的 IG 網址 ★ -->
+                <a href="https://www.instagram.com/jingyiwei_official" target="_blank" class="ig-icon">
+                    <i class="fa-brands fa-instagram"></i> <!-- 這裡用 fa-brands 會更精準 -->
+                </a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

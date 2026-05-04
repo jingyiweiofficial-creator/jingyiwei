@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>商品詳情 | 井衣衛</title>
+    <link rel="stylesheet" href="./css/style.css"> <!-- 共用導覽列樣式 -->
+    <link rel="stylesheet" href="./css/product.css"> <!-- 此頁專用排版 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <header id="navbar">
+        <div class="nav-container">
+        <a href="index.html" class="logo">
+            <img src="./img/Logo_topl (1).png" alt="井衣衛 Logo">
+        </a>
+        
+        <ul class="nav-menu">
+            <li class="dropdown">
+                <a href="#">商品 <span>▼</span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="category.html">穿搭類 (文化的鎧甲)</a></li>
+                    <li><a href="bags.html">包袋類 (記憶的載體)</a></li>
+                    <li><a href="lifestyle.html">生活小物件</a></li>
+                    <li><a href="#">居家裝飾</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#">關於井衣衛 <span>▼</span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">水井村鑿井故事</a></li>
+                    <li><a href="#">永續再生理念</a></li>
+                    <li><a href="#">我們的團隊</a></li>
+                </ul>
+            </li>
+            <li><a href="#">聯絡我們</a></li>
+        </ul>
+        </div>
+    </header>
+
+    <!-- 商品詳情區塊 -->
+    <section class="product-detail-section">
+        <div class="product-layout">
+            
+            <!-- 左側：圖片與放大鏡 -->
+            <div class="product-left">
+                <!-- 主圖與放大鏡容器 -->
+                <div class="zoom-container" id="zoom-container">
+                    <img id="main-image" src="" alt="商品圖片">
+                </div>
+                <!-- 縮圖列表 -->
+                <div class="thumbnail-container" id="thumbnail-list">
+                    <!-- JS 會自動在這裡產生縮圖 -->
+                </div>
+            </div>
+
+            <!-- 右側：商品資訊 -->
+            <div class="product-right">
+                <h1 id="product-name">載入中...</h1>
+                <div class="product-price-display">NT. <span id="product-price">載入中...</span></div>
+                <div class="divider"></div>
+                <p id="product-desc" class="description"></p>
+                
+                <div class="product-options">
+                    <!-- 尺寸選擇區塊 -->
+                    <div class="size-section">
+                        <p><span id="size-title">服裝大小</span>： <span id="selected-size-text" style="color: var(--gold-primary); font-size: 16px; margin-left: 10px;">請選擇尺寸</span></p>
+                        <div class="size-options" id="size-list">
+                            <!-- JS 會自動在這裡產生尺寸按鈕 -->
+                        </div>
+                    </div>
+
+                    <!-- 顏色選擇區塊 -->
+                    <div class="color-section">
+                        <p>顏色：</p>
+                        <div class="color-options" id="color-list">
+                            <!-- JS 會自動在這裡產生顏色圈圈 -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 訂購按鈕 -->
+                <button class="order-btn">訂購 / 加入購物車</button>
+            </div>
+
+        </div>
+    </section>
+
+    <script src="./js/script.js"></script> <!-- 導覽列特效 -->
+    <script src="./js/product.js"></script> <!-- 動態載入資料與放大鏡 -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-info">
+                <p>&copy; 2026 井衣衛 JING YI WEI. 雲林水井村在地文化與永續衣著再生計畫</p>
+            </div>
+            <div class="footer-social">
+                <span>追蹤我們：</span>
+                <!-- ★ 請把下面的連結換成你們真正的 IG 網址 ★ -->
+                <a href="https://www.instagram.com/jingyiwei_official" target="_blank" class="ig-icon">
+                    <i class="fa-brands fa-instagram"></i> <!-- 這裡用 fa-brands 會更精準 -->
+                </a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
