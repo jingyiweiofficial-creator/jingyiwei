@@ -317,11 +317,49 @@ header.scrolled {
     filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.5));
 }
 
-/* ================= 理念輪播區塊 ================= */
+/* ================= 輪播區塊微調 ================= */
 .spirit-section {
-    padding: 100px 20px;
+    padding: 100px 20px 60px 20px; /* 縮小底部間距，準備銜接宣言 */
     background-color: #121212;
+}
+
+/* ================= 品牌宣言區塊 (Manifesto) ================= */
+.info-section.manifesto {
+    padding: 80px 20px 120px 20px; /* 增加底部間距，營造結尾感 */
+    /* 這裡加入一個微弱的漸層，讓它從輪播的深色過渡到更深一點的 Footer 色 */
+    background: linear-gradient(to bottom, #121212, #0d0d0d); 
     text-align: center;
+}
+
+.manifesto-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* 在標題上方加入一條細細的金線，產生一種「這是一個總結」的儀式感 */
+.gold-divider {
+    width: 50px;
+    height: 1px;
+    background-color: var(--gold-primary);
+    margin: 0 auto 40px auto;
+    opacity: 0.6;
+}
+
+.info-section.manifesto h2 {
+    color: var(--gold-primary);
+    font-size: 32px;
+    margin-bottom: 30px;
+    letter-spacing: 4px;
+    /* 讓字體看起來更像宣言 */
+    font-weight: 500;
+}
+
+.info-section.manifesto p {
+    line-height: 2;
+    font-size: 18px;
+    color: #aaa;
+    max-width: 650px;
+    margin: 0 auto 20px auto;
 }
 
 .spirit-title {
@@ -391,4 +429,57 @@ header.scrolled {
     max-width: 600px;
     margin: 0 auto;
     min-height: 3em; /* 防止文字高度不同造成跳動 */
+}
+/* ================= 購物車側邊欄 ================= */
+.cart-drawer {
+    position: fixed;
+    top: 0;
+    right: -400px; /* 預設藏在畫面右邊外面 */
+    width: 400px;
+    height: 100vh;
+    background-color: #1a1a1a;
+    z-index: 2000;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+    transition: right 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-drawer.open {
+    right: 0; /* 滑進畫面 */
+}
+
+.cart-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.7); z-index: 1999;
+    display: none;
+}
+
+.cart-header {
+    padding: 20px; border-bottom: 1px solid #333;
+    display: flex; justify-content: space-between; align-items: center;
+}
+.cart-header h2 { color: var(--gold-primary); font-size: 20px; }
+#close-cart { background: transparent; border: none; color: #fff; font-size: 24px; cursor: pointer; }
+
+.cart-items {
+    flex: 1; padding: 20px; overflow-y: auto; display: flex; flex-direction: column; gap: 15px;
+}
+
+/* 購物車裡的單個商品樣式 */
+.cart-item-card {
+    display: flex; gap: 15px; background: #222; padding: 10px; border-radius: 8px; align-items: center;
+}
+.cart-item-card img { width: 60px; height: 60px; object-fit: cover; border-radius: 4px; }
+.cart-item-info { flex: 1; }
+.cart-item-info h4 { color: #fff; font-size: 14px; margin-bottom: 5px; }
+.cart-item-info p { color: #aaa; font-size: 12px; }
+
+.cart-footer {
+    padding: 20px; border-top: 1px solid #333; background: #121212;
+}
+.cart-total { font-size: 18px; color: #fff; margin-bottom: 15px; text-align: right; }
+.checkout-btn {
+    width: 100%; padding: 15px; background: var(--gold-primary); color: #121212;
+    border: none; border-radius: 4px; font-size: 16px; font-weight: bold; cursor: pointer;
 }

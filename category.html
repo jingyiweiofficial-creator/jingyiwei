@@ -10,33 +10,46 @@
 </head>
 <body>
 
-    <!-- 導覽列 (記得使用你剛修改完、有 nav-container 的版本) -->
+    <!-- 修正後的頂部導覽列 -->
     <header id="navbar">
         <div class="nav-container">
-            <a href="index.html" class="logo"><img src="./img/Logo_topl (1).png"></a>
+            <a href="index.html" class="logo">
+                <img src="./img/Logo_topl (1).png" alt="井衣衛 Logo">
+            </a>
+            
             <ul class="nav-menu">
-            <li class="dropdown">
-                <a href="#">商品 <span>▼</span></a>
-                <ul class="dropdown-menu">
-                    <li><a href="category.html">穿搭類 (文化的鎧甲)</a></li>
-                    <li><a href="bags.html">包袋類 (記憶的載體)</a></li>
-                    <li><a href="lifestyle.html">生活小物件</a></li>
-                    <li><a href="#">居家裝飾</a></li>
-                </ul>
-            </li>
-            <li class="dropdown">
-                <a href="#">關於井衣衛 <span>▼</span></a>
-                <ul class="dropdown-menu">
-                    <li><a href="#">水井村鑿井故事</a></li>
-                    <li><a href="#">永續再生理念</a></li>
-                    <li><a href="#">我們的團隊</a></li>
-                </ul>
-            </li>
-            <li><a href="#">聯絡我們</a></li>
-        </ul>
-        </div>
-    </header>
-        </div>
+                <li class="dropdown">
+                    <a href="#">商品 <span>▼</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="category.html">穿搭類 (文化的鎧甲)</a></li>
+                        <li><a href="bags.html">包袋類 (記憶的載體)</a></li>
+                        <li><a href="lifestyle.html">生活小物件</a></li>
+                        <li><a href="decor.html">居家裝飾</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#">關於井衣衛 <span>▼</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="story.html">水井村鑿井故事</a></li>
+                        <li><a href="sustainability.html">永續再生理念</a></li>
+                        <li><a href="team.html">我們的團隊</a></li>
+                    </ul>
+                </li>
+                <li><a href="contact.html">聯絡我們</a></li>
+            </ul>
+
+            <div class="nav-actions" style="display: flex; gap: 20px; margin-left: 20px; align-items: center;">
+                <!-- 登入按鈕 -->
+                <a href="#" id="login-btn" style="color: var(--text-light); text-decoration: none; font-size: 16px;">
+                    <i class="fa-solid fa-user"></i> <span id="user-name">會員登入</span>
+                </a>
+                <!-- 購物車按鈕 -->
+                <a href="#" id="cart-btn" style="color: var(--text-light); text-decoration: none; font-size: 18px; position: relative;">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span id="cart-count" style="position: absolute; top: -10px; right: -15px; background: red; color: white; font-size: 12px; border-radius: 50%; padding: 2px 6px; font-weight: bold; display: none;">0</span>
+                </a> <!-- ✅ 補上這個 </a> -->
+            </div> <!-- ✅ 關閉 nav-actions -->
+        </div> <!-- ✅ 補上這個關閉 nav-container 的 div -->
     </header>
 
     <main class="category-main">
@@ -81,5 +94,22 @@
             </div>
         </div>
     </footer>
+    <!-- 購物車側邊欄 (預設隱藏) -->
+    <div id="cart-drawer" class="cart-drawer">
+        <div class="cart-header">
+            <h2>我的購物車</h2>
+            <button id="close-cart"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="cart-items" id="cart-items-container">
+            <!-- JS 會把商品渲染在這裡 -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">總計：<span style="color:var(--gold-primary)">NT. <span id="cart-total-price">0</span></span></div>
+            <button id="checkout-btn" class="checkout-btn">前往結帳</button>
+        </div>
+    </div>
+    
+    <!-- 購物車的背景遮罩 -->
+    <div id="cart-overlay" class="cart-overlay"></div>
 </body>
 </html>

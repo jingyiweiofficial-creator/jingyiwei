@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>井衣衛 JING YI WEI</title>
-    <!-- 引入外部的 CSS 檔案 -->
+    <title>水井村鑿井故事 | 井衣衛 JING YI WEI</title>
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/story.css"> <!-- 這個頁面專屬的樣式 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
@@ -52,72 +52,56 @@
         </div> <!-- ✅ 補上這個關閉 nav-container 的 div -->
     </header>
 
-    <!-- 英雄區塊 (主視覺商品展示) -->
-    <section class="hero-section">
-        <div class="slogan">將水井村的鑿井精神，穿在身上。</div>
-        
-        <div class="showcase-container">
-            <!-- 第一件：新出的「村靈銘刻」 -->
-            <a href="product.html?id=village_tee_1" class="flip-card">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                        <img src="./img/village_tee_1.png" alt="村靈銘刻正面" class="product-img">
-                    </div>
-                    <div class="flip-card-back">
-                        <img src="./img/village_tee_2.png" alt="村靈銘刻背面" class="product-img">
-                    </div>
-                </div>
-            </a>
-
-            <!-- 第二件：鑿井人丹寧背心 -->
-            <a href="product.html?id=vest_1" class="flip-card">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                        <img src="./img/vest_back.png" alt="外套背面" class="product-img">
-                    </div>
-                    <div class="flip-card-back">
-                        <img src="./img/vest_front.png" alt="外套正面" class="product-img">
-                    </div>
-                </div>
-            </a>
+    <!-- 故事大標題區塊 -->
+    <div class="story-hero">
+        <div class="story-hero-content">
+            <h1>水井村鑿井故事</h1>
+            <p>一口井，掘出了一個村落的榮枯與堅韌</p>
         </div>
-    </section>
-
-    <!-- ★ 新增：理念輪播區塊 ★ -->
-    <section class="spirit-section">
-        <h2 class="spirit-title">井衣衛守護著...</h2>
-        
-        <div class="slider-container">
-            <!-- 左按鈕 -->
-            <button class="slider-btn prev" id="prevSpirit">
-                <i class="fas fa-chevron-left"></i>
-            </button>
-
-            <!-- 輪播內容 -->
-            <div class="slider-content">
-                <div class="spirit-image-wrapper">
-                    <img id="spiritImg" src="./img/spirit1.png" alt="守護理念">
-                </div>
-                <p id="spiritDesc" class="spirit-text">正在載入理念...</p>
-            </div>
-
-            <!-- 右按鈕 -->
-            <button class="slider-btn next" id="nextSpirit">
-                <i class="fas fa-chevron-right"></i>
-            </button>
-        </div>
-    </section>
-
-    <section class="info-section manifesto">
-    <div class="manifesto-container">
-        <div class="gold-divider"></div> <!-- 加入裝飾線 -->
-        <h2>讓每一件衣服，都成為文化的鎧甲</h2>
-        <p>「井衣衛」不只是服飾品牌，而是一場關於土地、記憶與永續的社會運動。</p>
-        <p>我們堅持零廢棄原則，透過將廢棄布料再造成穿搭單品，讓水井村的鑿井韌性，透過你的穿搭被更多人看見。</p>
     </div>
-</section>
 
-    <!-- 頁尾 -->
+    <!-- 故事敘述內容區塊 -->
+    <main class="story-main">
+        
+        <!-- 第一段：歷史與發展 -->
+        <section class="story-section">
+            <div class="story-text">
+                <h2>水成井字：地理限制下的求生之路</h2>
+                <p>雲林縣口湖鄉的水井村，位處台灣西海岸最邊陲的地帶。據《臺灣地名辭書（卷九）雲林縣》所載，「水井」之名，係因先人於此地挖井取得淡水，逐漸聚集成村而來。</p>
+                <p>然而，緊鄰海峽帶來的偏鹹土壤與常年強風，讓這裡極不適合農業發展。為了解決生計，老一輩的水井人拿起了工具，走向全台各地。靠著精湛的「鑿井」技術，他們在缺水的土地上打出一口口生命之泉，也撐起了整個村落的繁華。全盛時期，村裡有一半以上的人口都在從事鑿井業，讓水井村成為了台灣最知名的「鑿井村」。</p>
+            </div>
+            <div class="story-image">
+                <!-- 建議放一張早期農村、水井或老照片 -->
+                <img src="./img/story_bg.jpg" alt="水井村早期風貌">
+            </div>
+        </section>
+
+        <!-- 第二段：衰退與困境 (圖文反轉排版) -->
+        <section class="story-section reverse">
+            <div class="story-text">
+                <h2>時代洪流與青黃不接的困境</h2>
+                <p>隨著地下水開發管制的推行與自來水的普及，鑿井業逐漸走向黃昏。那些必須長年離鄉背井、沒日沒夜與泥沙搏鬥的日子，成為了一般人難以理解的艱辛勞動。</p>
+                <p>曾經熱鬧的村落，因為產業的萎縮，年輕人不得不再次遠走他鄉，前往大城市謀生。如今的水井村，面臨著嚴重的「青黃不接」與人口老化問題。從事鑿井的人口寥寥無幾，那些曾在地下百米開拓水源的歷史記憶，以及刻苦耐勞的職人精神，正面臨失傳的危機。</p>
+            </div>
+            <div class="story-image">
+                <!-- 建議放一張空蕩的村落街道或佈滿歲月痕跡的工具照片 -->
+                <img src="./img/story_4.jpg" alt="青黃不接的水井村">
+            </div>
+        </section>
+
+        <!-- 第三段：井衣衛的誕生 (滿版引言設計) -->
+        <section class="story-mission">
+            <div class="mission-content">
+                <i class="fa-solid fa-quote-left quote-icon"></i>
+                <h2>井衣衛：把故鄉的記憶，穿在身上</h2>
+                <p>面對水井村的困境，「井衣衛」團隊應運而生。我們不忍看見這份充滿生命力的文化記憶就此消逝。因此，我們以「井」為圖騰，以「衣」為鎧甲，決定為這片土地做些什麼。</p>
+                <p>透過收購廢棄舊衣與剩料，我們將水井村的鑿井符號、農田阡陌與守護信仰，轉化為服飾與生活物件上的刺繡與拼接設計。這不僅是推動永續再生，更為在地的長輩創造了就業機會。我們相信，只要還有人穿著井衣衛，水井村的故事就不會被遺忘；這份土地的記憶，將會跟著每一個步伐，繼續勇敢地走下去。</p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 頁尾 Footer -->
     <footer class="site-footer">
         <div class="footer-container">
             <div class="footer-info">
@@ -149,7 +133,6 @@
     <!-- 購物車的背景遮罩 -->
     <div id="cart-overlay" class="cart-overlay"></div>
 
-    <!-- JavaScript 放在最後面 -->
     <script src="./js/script.js"></script>
 </body>
 </html>

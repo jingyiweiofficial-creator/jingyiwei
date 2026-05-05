@@ -1,0 +1,121 @@
+/* ================= 團隊介紹專屬樣式 ================= */
+
+.team-main {
+    padding-top: 150px;
+    padding-bottom: 100px;
+    max-width: 1000px;
+    margin: 0 auto;
+    min-height: 100vh;
+}
+
+/* 標題區塊 */
+.team-header {
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.team-header h1 {
+    color: var(--gold-primary);
+    font-size: 36px;
+    letter-spacing: 5px;
+    margin-bottom: 15px;
+}
+
+.team-header p {
+    color: #ccc;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+/* 3x3 井字網格 */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding: 0 20px;
+}
+
+/* 單張團隊卡片 */
+.team-card {
+    background: #151515;
+    border: 1px solid #2a2a2a;
+    border-radius: 8px;
+    padding: 50px 30px;
+    text-align: center;
+    position: relative;
+    overflow: hidden; /* 確保背景字不會凸出去 */
+    transition: all 0.4s ease;
+    cursor: default;
+}
+
+/* 懸停特效：卡片發光與上浮 */
+.team-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--gold-primary);
+    box-shadow: 0 15px 30px rgba(212, 175, 55, 0.1);
+}
+
+/* 隱藏的大字姓氏背景 */
+.bg-surname {
+    position: absolute;
+    right: -10px;
+    bottom: -30px;
+    font-size: 160px;
+    font-weight: 900;
+    color: rgba(212, 175, 55, 0.04); /* 非常淡的金色 */
+    line-height: 1;
+    user-select: none; /* 避免反白選取 */
+    transition: all 0.5s ease;
+    z-index: 0;
+}
+
+/* 滑鼠移上去時，背景字變明顯並放大 */
+.team-card:hover .bg-surname {
+    color: rgba(212, 175, 55, 0.15);
+    transform: scale(1.1) translate(-10px, -10px);
+}
+
+/* 前方文字內容 */
+.card-content {
+    position: relative;
+    z-index: 1; /* 確保文字在背景字之上 */
+}
+
+.card-content h3 {
+    color: #fff;
+    font-size: 24px;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.card-content .role {
+    color: var(--gold-primary);
+    font-size: 14px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+/* 底部裝飾短線 */
+.decor-line {
+    width: 30px;
+    height: 2px;
+    background-color: var(--gold-primary);
+    margin: 20px auto 0 auto;
+    transition: width 0.3s ease;
+}
+
+.team-card:hover .decor-line {
+    width: 60px; /* 移上去時線條拉長 */
+}
+
+/* 手機版 RWD：變成一排兩格或一格 */
+@media screen and (max-width: 768px) {
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media screen and (max-width: 480px) {
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+}

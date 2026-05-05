@@ -1,0 +1,104 @@
+/* ================= 永續再生理念 (SDGs) 專屬樣式 ================= */
+
+.sdgs-main {
+    padding-top: 150px;
+    padding-bottom: 100px;
+    background: radial-gradient(circle at top center, #222 0%, #121212 80%);
+    min-height: 100vh;
+}
+
+/* 標題區塊 */
+.sdgs-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 60px auto;
+    padding: 0 20px;
+}
+
+.sdgs-header h1 {
+    color: var(--gold-primary);
+    font-size: 36px;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.sdgs-header p {
+    color: #ccc;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+/* SDGs 卡片排版 */
+.sdgs-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.sdgs-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+/* 讓下排的單個卡片置中 */
+.sdgs-row.center {
+    justify-content: center;
+}
+
+/* 卡片設計 */
+.sdg-card {
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    border-top: 4px solid var(--gold-primary); /* 頂部金色裝飾線 */
+    border-radius: 8px;
+    padding: 40px 30px;
+    flex: 1;
+    max-width: 480px; /* 限制最大寬度，避免變形 */
+    text-align: left;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    position: relative;
+    overflow: hidden;
+}
+
+/* 滑鼠移上去的浮動與發光效果 */
+.sdg-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--gold-primary);
+    box-shadow: 0 15px 40px rgba(212, 175, 55, 0.15);
+}
+
+/* 卡片內的圖示 */
+.sdg-icon {
+    font-size: 40px;
+    color: var(--gold-primary);
+    margin-bottom: 20px;
+    opacity: 0.8;
+}
+
+.sdg-card h2 {
+    color: #fff;
+    font-size: 22px;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.sdg-card p {
+    color: #aaa;
+    font-size: 16px;
+    line-height: 1.8;
+    text-align: justify; /* 左右對齊讓段落看起來更方正 */
+}
+
+/* 手機版響應式設計 (RWD) */
+@media screen and (max-width: 768px) {
+    .sdgs-row {
+        flex-direction: column;
+        align-items: center;
+    }
+    .sdg-card {
+        width: 100%;
+    }
+}

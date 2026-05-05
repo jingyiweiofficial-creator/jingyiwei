@@ -1,0 +1,114 @@
+/* ================= 水井村故事頁面專屬樣式 ================= */
+
+/* 頂部大圖區塊 */
+.story-hero {
+    height: 60vh;
+    min-height: 400px;
+    background: linear-gradient(rgba(18, 18, 18, 0.7), rgba(18, 18, 18, 0.9)), 
+                url('../img/story_1.jpg') center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 100px; /* 避開 Navbar */
+}
+
+.story-hero-content h1 {
+    color: var(--gold-primary);
+    font-size: 48px;
+    letter-spacing: 5px;
+    margin-bottom: 15px;
+}
+
+.story-hero-content p {
+    color: #ccc;
+    font-size: 20px;
+    letter-spacing: 2px;
+}
+
+/* 內容區塊基礎設定 */
+.story-main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 80px 20px;
+}
+
+/* 圖文交錯排版 */
+.story-section {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    margin-bottom: 100px;
+}
+
+/* 讓第二段圖文左右反轉 */
+.story-section.reverse {
+    flex-direction: row-reverse;
+}
+
+.story-text {
+    flex: 1;
+}
+
+.story-text h2 {
+    color: var(--gold-primary);
+    font-size: 28px;
+    margin-bottom: 25px;
+    border-left: 4px solid var(--gold-primary);
+    padding-left: 15px;
+}
+
+.story-text p {
+    color: #bbb;
+    font-size: 16px;
+    line-height: 2;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.story-image {
+    flex: 1;
+}
+
+.story-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    border: 1px solid #333;
+}
+
+/* 井衣衛使命區塊 (引言風格) */
+.story-mission {
+    background-color: #1a1a1a;
+    padding: 60px 40px;
+    border-radius: 12px;
+    text-align: center;
+    border: 1px solid var(--gold-primary);
+    position: relative;
+    margin-top: 40px;
+}
+
+.quote-icon {
+    font-size: 40px;
+    color: var(--gold-primary);
+    opacity: 0.3;
+    margin-bottom: 20px;
+}
+
+.mission-content h2 {
+    color: var(--gold-primary);
+    font-size: 28px;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+}
+
+.mission-content p {
+    color: #eee;
+    font-size: 18px;
+    line-height: 2;
+    margin-bottom: 20px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}

@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>井衣衛 JING YI WEI</title>
-    <!-- 引入外部的 CSS 檔案 -->
+    <title>聯絡我們 | 井衣衛 JING YI WEI</title>
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/contact.css"> <!-- 聯絡專屬 CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
@@ -52,72 +52,79 @@
         </div> <!-- ✅ 補上這個關閉 nav-container 的 div -->
     </header>
 
-    <!-- 英雄區塊 (主視覺商品展示) -->
-    <section class="hero-section">
-        <div class="slogan">將水井村的鑿井精神，穿在身上。</div>
-        
-        <div class="showcase-container">
-            <!-- 第一件：新出的「村靈銘刻」 -->
-            <a href="product.html?id=village_tee_1" class="flip-card">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                        <img src="./img/village_tee_1.png" alt="村靈銘刻正面" class="product-img">
-                    </div>
-                    <div class="flip-card-back">
-                        <img src="./img/village_tee_2.png" alt="村靈銘刻背面" class="product-img">
-                    </div>
-                </div>
-            </a>
-
-            <!-- 第二件：鑿井人丹寧背心 -->
-            <a href="product.html?id=vest_1" class="flip-card">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                        <img src="./img/vest_back.png" alt="外套背面" class="product-img">
-                    </div>
-                    <div class="flip-card-back">
-                        <img src="./img/vest_front.png" alt="外套正面" class="product-img">
-                    </div>
-                </div>
-            </a>
+    <main class="contact-main">
+        <!-- 標題區塊 -->
+        <div class="contact-header">
+            <h1>聯絡我們</h1>
+            <p>無論是商品詢問、品牌合作，或是想更了解水井村的故事，<br>我們都非常期待收到您的來信。</p>
         </div>
-    </section>
 
-    <!-- ★ 新增：理念輪播區塊 ★ -->
-    <section class="spirit-section">
-        <h2 class="spirit-title">井衣衛守護著...</h2>
-        
-        <div class="slider-container">
-            <!-- 左按鈕 -->
-            <button class="slider-btn prev" id="prevSpirit">
-                <i class="fas fa-chevron-left"></i>
-            </button>
-
-            <!-- 輪播內容 -->
-            <div class="slider-content">
-                <div class="spirit-image-wrapper">
-                    <img id="spiritImg" src="./img/spirit1.png" alt="守護理念">
-                </div>
-                <p id="spiritDesc" class="spirit-text">正在載入理念...</p>
+        <!-- 左右雙欄內容 -->
+        <div class="contact-container">
+            
+            <!-- 左側：Google 地圖 -->
+            <div class="contact-left map-box">
+                <!-- iframe 的 src 直接定位到雲林縣口湖鄉水井村 -->
+                <iframe 
+                    src="https://maps.google.com/maps?q=雲林縣口湖鄉水井村&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                    width="100%" 
+                    height="100%" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
             </div>
 
-            <!-- 右按鈕 -->
-            <button class="slider-btn next" id="nextSpirit">
-                <i class="fas fa-chevron-right"></i>
-            </button>
+            <!-- 右側：聯絡資訊 -->
+            <div class="contact-right info-box">
+                <h2>聯繫井衣衛 <small>GET IN TOUCH</small></h2>
+                <div class="decor-line"></div>
+                
+                <div class="info-list">
+                    <!-- 信箱 -->
+                    <div class="info-item">
+                        <div class="icon"><i class="fa-solid fa-envelope"></i></div>
+                        <div class="text">
+                            <h3>Email</h3>
+                            <a href="mailto:jingyiweiofficial@gmail.com">jingyiweiofficial@gmail.com</a>
+                        </div>
+                    </div>
+
+                    <!-- 電話 -->
+                    <div class="info-item">
+                        <div class="icon"><i class="fa-solid fa-phone"></i></div>
+                        <div class="text">
+                            <h3>連絡電話</h3>
+                            <a href="tel:+886504045678">05-0404-5678</a> <!-- 你們可以換成真實號碼或先用假的 -->
+                        </div>
+                    </div>
+
+                    <!-- 地址 -->
+                    <div class="info-item">
+                        <div class="icon"><i class="fa-solid fa-location-dot"></i></div>
+                        <div class="text">
+                            <h3>品牌據點</h3>
+                            <p>雲林縣口湖鄉水井村 (水井社區發展協會)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 社交平台 -->
+                <div class="social-section">
+                    <h3>關注社群動態</h3>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/jingyiwei_official" target="_blank" class="social-btn ig"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="social-btn fb"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="social-btn line"><i class="fa-brands fa-line"></i></a>
+                    </div>
+                </div>
+            </div>
+
         </div>
-    </section>
+    </main>
 
-    <section class="info-section manifesto">
-    <div class="manifesto-container">
-        <div class="gold-divider"></div> <!-- 加入裝飾線 -->
-        <h2>讓每一件衣服，都成為文化的鎧甲</h2>
-        <p>「井衣衛」不只是服飾品牌，而是一場關於土地、記憶與永續的社會運動。</p>
-        <p>我們堅持零廢棄原則，透過將廢棄布料再造成穿搭單品，讓水井村的鑿井韌性，透過你的穿搭被更多人看見。</p>
-    </div>
-</section>
-
-    <!-- 頁尾 -->
+    <!-- 頁尾 Footer -->
     <footer class="site-footer">
         <div class="footer-container">
             <div class="footer-info">
@@ -149,7 +156,6 @@
     <!-- 購物車的背景遮罩 -->
     <div id="cart-overlay" class="cart-overlay"></div>
 
-    <!-- JavaScript 放在最後面 -->
     <script src="./js/script.js"></script>
 </body>
 </html>

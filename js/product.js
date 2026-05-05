@@ -114,8 +114,45 @@ document.addEventListener("DOMContentLoaded", function() {
                     mainImage.style.transformOrigin = "center center";
                     mainImage.style.transform = "scale(1)";
                 });
+                // ==========================================
+                // ★ 新增：加入購物車功能
+                // ==========================================
+                const orderBtn = document.querySelector('.order-btn');
+                orderBtn.addEventListener('click', function() {
+                    
+                    // 1. 取得使用者選的尺寸 (如果沒有尺寸就給預設)
+                    const selectedSize = document.getElementById('selected-size-text').innerText;
+                    
+                    // 2. 確保商品有價格才能買 (非賣品阻擋)
+                    if (product.price === "0" || product.price === "非賣品") {
+                        alert("此為展示品，無法訂購喔！");
+                        return;
+                    }
+
+                    // 3. 建立這個商品的資料包
+                    const itemToBuy = {
+                        id: productId,
+                        name: product.name,
+                        size: selectedSize,
+                        price: parseInt(product.price.replace(',', '')), // 把 1,280 變成數字 1280
+                        img: product.mainImg
+                    };
+
+                    // 4. 從 localStorage 拿出舊的購物車 (如果沒有就建立空陣列)
+                    let cart = JSON.parse(localStorage.getItem('jingyiwei_cart')) ||[];
+                    
+                    // 5. 把新商品塞進去並存回瀏覽器
+                    cart.push(itemToBuy);
+                    localStorage.setItem('jingyiwei_cart', JSON.stringify(cart));
+
+                    alert(`已將 ${product.name} (${selectedSize}) 加入購物車！`);
+                    
+                    // 呼叫更新購物車數字的函數 (寫在 script.js)
+                    updateCartUI(); 
+                });
 
             } else {
+                
                 document.getElementById('product-name').innerText = "商品不存在";
             }
         })

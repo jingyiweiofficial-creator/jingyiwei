@@ -1,0 +1,177 @@
+/* ================= 聯絡我們專屬樣式 ================= */
+
+.contact-main {
+    padding-top: 150px;
+    padding-bottom: 100px;
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: 100vh;
+}
+
+/* 標題區塊 */
+.contact-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.contact-header h1 {
+    color: var(--gold-primary);
+    font-size: 36px;
+    letter-spacing: 5px;
+    margin-bottom: 15px;
+}
+
+.contact-header p {
+    color: #ccc;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+/* 左右排版 */
+.contact-container {
+    display: flex;
+    gap: 60px;
+    padding: 0 20px;
+    align-items: stretch;
+}
+
+/* 左側：地圖 */
+.contact-left {
+    flex: 1.2; /* 地圖佔比稍微大一點點 */
+    background: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 12px;
+    overflow: hidden;
+    min-height: 500px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    position: relative;
+}
+
+/* ★ 神奇的濾鏡：讓亮色的 Google Map 變成適合暗黑風格的色調 ★ */
+.map-box iframe {
+    filter: invert(90%) hue-rotate(180deg) brightness(90%) contrast(85%);
+    transition: filter 0.5s ease;
+}
+
+/* 滑鼠移到地圖上時，恢復原本顏色方便觀看 */
+.map-box:hover iframe {
+    filter: invert(0) hue-rotate(0) brightness(100%) contrast(100%);
+}
+
+/* 右側：聯絡資訊 */
+.contact-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.info-box h2 {
+    color: #fff;
+    font-size: 28px;
+    letter-spacing: 2px;
+}
+
+.info-box h2 small {
+    display: block;
+    font-size: 14px;
+    color: var(--gold-primary);
+    margin-top: 8px;
+    letter-spacing: 4px;
+}
+
+.info-box .decor-line {
+    width: 60px;
+    height: 2px;
+    background-color: var(--gold-primary);
+    margin: 20px 0 40px 0;
+}
+
+/* 聯絡條目 */
+.info-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.info-item .icon {
+    background-color: #1a1a1a;
+    border: 1px solid var(--gold-primary);
+    color: var(--gold-primary);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    flex-shrink: 0;
+}
+
+.info-item .text h3 {
+    color: #fff;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.info-item .text a, .info-item .text p {
+    color: #aaa;
+    font-size: 16px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.info-item .text a:hover {
+    color: var(--gold-primary);
+}
+
+/* 社交平台按鈕 */
+.social-section h3 {
+    color: #fff;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-btn {
+    width: 45px;
+    height: 45px;
+    border-radius: 8px;
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    color: #aaa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.social-btn:hover {
+    background-color: var(--gold-primary);
+    color: #121212;
+    border-color: var(--gold-primary);
+    transform: translateY(-5px);
+}
+
+/* 手機版 RWD：變成上下疊加 */
+@media screen and (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+    }
+    .contact-left {
+        min-height: 350px;
+    }
+}

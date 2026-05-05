@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>井衣衛 JING YI WEI</title>
-    <!-- 引入外部的 CSS 檔案 -->
+    <title>永續再生理念 | 井衣衛 JING YI WEI</title>
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/sdgs.css"> <!-- 專屬排版 CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
@@ -52,72 +52,47 @@
         </div> <!-- ✅ 補上這個關閉 nav-container 的 div -->
     </header>
 
-    <!-- 英雄區塊 (主視覺商品展示) -->
-    <section class="hero-section">
-        <div class="slogan">將水井村的鑿井精神，穿在身上。</div>
-        
-        <div class="showcase-container">
-            <!-- 第一件：新出的「村靈銘刻」 -->
-            <a href="product.html?id=village_tee_1" class="flip-card">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                        <img src="./img/village_tee_1.png" alt="村靈銘刻正面" class="product-img">
-                    </div>
-                    <div class="flip-card-back">
-                        <img src="./img/village_tee_2.png" alt="村靈銘刻背面" class="product-img">
-                    </div>
-                </div>
-            </a>
-
-            <!-- 第二件：鑿井人丹寧背心 -->
-            <a href="product.html?id=vest_1" class="flip-card">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                        <img src="./img/vest_back.png" alt="外套背面" class="product-img">
-                    </div>
-                    <div class="flip-card-back">
-                        <img src="./img/vest_front.png" alt="外套正面" class="product-img">
-                    </div>
-                </div>
-            </a>
+    <main class="sdgs-main">
+        <!-- 頁面標題 -->
+        <div class="sdgs-header">
+            <h1>符合聯合國永續發展目標</h1>
+            <p>井衣衛的核心價值完全契合以下三項 SDGs 指標，讓地方創生與全球永續議程同步接軌。</p>
         </div>
-    </section>
 
-    <!-- ★ 新增：理念輪播區塊 ★ -->
-    <section class="spirit-section">
-        <h2 class="spirit-title">井衣衛守護著...</h2>
-        
-        <div class="slider-container">
-            <!-- 左按鈕 -->
-            <button class="slider-btn prev" id="prevSpirit">
-                <i class="fas fa-chevron-left"></i>
-            </button>
-
-            <!-- 輪播內容 -->
-            <div class="slider-content">
-                <div class="spirit-image-wrapper">
-                    <img id="spiritImg" src="./img/spirit1.png" alt="守護理念">
+        <!-- SDGs 卡片區塊 -->
+        <div class="sdgs-container">
+            
+            <!-- 上排：左右兩個 -->
+            <div class="sdgs-row">
+                <!-- SDG 12 -->
+                <div class="sdg-card">
+                    <div class="sdg-icon"><i class="fa-solid fa-arrows-spin"></i></div>
+                    <h2>SDG 12：責任消費與生產</h2>
+                    <p>透過將廢棄布料再造成「文化鎧甲」，延長紡織品生命週期，教育消費者轉向有意識的低碳消費，實踐循環經濟與零廢棄原則。</p>
                 </div>
-                <p id="spiritDesc" class="spirit-text">正在載入理念...</p>
+
+                <!-- SDG 8 -->
+                <div class="sdg-card">
+                    <div class="sdg-icon"><i class="fa-solid fa-handshake-angle"></i></div>
+                    <h2>SDG 8：尊嚴就業與經濟成長</h2>
+                    <p>培訓在地長輩縫紉、建立社區縫紉工坊，不只創造文創產值，更解決地方長者的社會參與與就業問題，並為青年回流創造機會。</p>
+                </div>
             </div>
 
-            <!-- 右按鈕 -->
-            <button class="slider-btn next" id="nextSpirit">
-                <i class="fas fa-chevron-right"></i>
-            </button>
+            <!-- 下排：置中一個 -->
+            <div class="sdgs-row center">
+                <!-- SDG 11 -->
+                <div class="sdg-card">
+                    <div class="sdg-icon"><i class="fa-solid fa-people-roof"></i></div>
+                    <h2>SDG 11：永續城市與社區</h2>
+                    <p>致力於保護與傳承水井村特殊的「鑿井文化」，讓文化遺產透過穿搭商品重新進入日常生活，強化社區的文化包容性與韌性。</p>
+                </div>
+            </div>
+
         </div>
-    </section>
+    </main>
 
-    <section class="info-section manifesto">
-    <div class="manifesto-container">
-        <div class="gold-divider"></div> <!-- 加入裝飾線 -->
-        <h2>讓每一件衣服，都成為文化的鎧甲</h2>
-        <p>「井衣衛」不只是服飾品牌，而是一場關於土地、記憶與永續的社會運動。</p>
-        <p>我們堅持零廢棄原則，透過將廢棄布料再造成穿搭單品，讓水井村的鑿井韌性，透過你的穿搭被更多人看見。</p>
-    </div>
-</section>
-
-    <!-- 頁尾 -->
+    <!-- 頁尾 Footer -->
     <footer class="site-footer">
         <div class="footer-container">
             <div class="footer-info">
@@ -149,7 +124,6 @@
     <!-- 購物車的背景遮罩 -->
     <div id="cart-overlay" class="cart-overlay"></div>
 
-    <!-- JavaScript 放在最後面 -->
     <script src="./js/script.js"></script>
 </body>
 </html>

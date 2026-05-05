@@ -35,7 +35,7 @@
         "subCategory": "top",
         "description": "以早期鑿井工人的工作服為靈感，採用重磅回收丹寧布料製作。多口袋設計提供實用的收納空間，領口處故意保留的抽絲毛邊，象徵在堅硬地層中開拓水源的頑強精神。",
         "sizes": ["F (單一尺寸)"],
-        "colors": ["#2C3E50"],
+        "colors": ["#1F2C1C"],
         "mainImg": "./img/vest_front_main.png",
         "thumbnails":[
             "./img/vest_front.png",
@@ -145,7 +145,9 @@
         "subCategory": "doll",
         "description": "利用製作衣服剩餘的碎布料拼接而成，每一隻玩偶的紋理都是獨一無二的，賦予布料第二次生命。",
         "mainImg": "./img/doll_1.png",
-        "thumbnails": ["./img/doll_1.png"]
+        "colors":["#003D79"],
+        "sizes": ["10 cm", "15 cm", "20 cm"],
+        "thumbnails": ["./img/doll_1.png", "./img/doll_2.png"]
     }
 }
-    
+
