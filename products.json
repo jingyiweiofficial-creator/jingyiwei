@@ -148,6 +148,28 @@
         "colors":["#003D79"],
         "sizes": ["10 cm", "15 cm", "20 cm"],
         "thumbnails": ["./img/doll_1.jpg", "./img/doll_2.jpg"]
+    },
+    "decor_tapestry_1": {
+        "name": "「村靈守護」手工拼接掛毯",
+        "price": "1,880",
+        "category": "decor",
+        "subCategory": "tapestry",
+        "description": "融合絎縫工法與水井村四大守護圖騰（靈馬、古龜、生命之井、原生花卉），每一件均為職人手工拼貼而成。",
+        "colors":["#f8f8d9"],
+        "sizes": ["55 X 69 cm", "150 X 100 cm"],
+        "mainImg": "./img/tapestry_1.jpg",
+        "thumbnails": ["./img/tapestry_1.jpg"]
+    },
+    "decor_coaster_1": {
+        "name": "「古井意象」原木雕刻杯墊",
+        "price": "199",
+        "category": "decor",
+        "subCategory": "coaster",
+        "description": "精選天然原木打造，細緻刻畫水井村生活縮影。木頭溫潤的觸感搭配雷雕工藝，為茶席增添一份詩意。",
+        "colors":["#A37E58"],
+        "sizes": ["直徑 8 cm", "直徑 9 cm", "直徑 10 cm"],
+        "mainImg": "./img/coaster_1.jpg",
+        "thumbnails": ["./img/coaster_1.jpg"]
     }
 }
 

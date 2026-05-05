@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>居家裝飾 | 井衣衛 JING YI WEI</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/category.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        .decor-container {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-top: 50px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 20px;
+        }
+        .decor-section {
+            flex: 1;
+            max-width: 500px;
+        }
+        .section-title {
+            color: var(--gold-primary);
+            border-bottom: 1px solid var(--gold-primary);
+            padding-bottom: 10px;
+            margin-bottom: 25px;
+            text-align: center;
+            font-size: 22px;
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 修正後的頂部導覽列 -->
+    <header id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="./img/Logo_topl (1).png" alt="井衣衛 Logo">
+            </a>
+            
+            <ul class="nav-menu">
+                <li class="dropdown">
+                    <a href="#">商品 <span>▼</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="category.html">穿搭類 (文化的鎧甲)</a></li>
+                        <li><a href="bags.html">包袋類 (記憶的載體)</a></li>
+                        <li><a href="lifestyle.html">生活小物件</a></li>
+                        <li><a href="decor.html">居家裝飾</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#">關於井衣衛 <span>▼</span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="story.html">水井村鑿井故事</a></li>
+                        <li><a href="sustainability.html">永續再生理念</a></li>
+                        <li><a href="team.html">我們的團隊</a></li>
+                    </ul>
+                </li>
+                <li><a href="contact.html">聯絡我們</a></li>
+            </ul>
+
+            <div class="nav-actions" style="display: flex; gap: 20px; margin-left: 20px; align-items: center;">
+                <!-- 登入按鈕 -->
+                <a href="#" id="login-btn" style="color: var(--text-light); text-decoration: none; font-size: 16px;">
+                    <i class="fa-solid fa-user"></i> <span id="user-name">會員登入</span>
+                </a>
+                <!-- 購物車按鈕 -->
+                <a href="#" id="cart-btn" style="color: var(--text-light); text-decoration: none; font-size: 18px; position: relative;">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span id="cart-count" style="position: absolute; top: -10px; right: -15px; background: red; color: white; font-size: 12px; border-radius: 50%; padding: 2px 6px; font-weight: bold; display: none;">0</span>
+                </a> <!-- ✅ 補上這個 </a> -->
+            </div> <!-- ✅ 關閉 nav-actions -->
+        </div> <!-- ✅ 補上這個關閉 nav-container 的 div -->
+    </header>
+
+    <main class="category-main">
+        <h1 class="page-title">居家裝飾 <small>土地的連結</small></h1>
+
+        <div class="decor-container">
+            <!-- 掛毯區塊 -->
+            <section class="decor-section">
+                <h2 class="section-title">手工掛毯 <small>TAPESTRY</small></h2>
+                <div class="product-grid" id="tapestry-group" style="display: block;">
+                    <!-- JS 會在這裡產生商品 -->
+                </div>
+            </section>
+
+            <!-- 杯墊區塊 -->
+            <section class="decor-section">
+                <h2 class="section-title">雕刻杯墊 <small>COASTERS</small></h2>
+                <div class="product-grid" id="coaster-group" style="display: block;">
+                    <!-- JS 會在這裡產生商品 -->
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- 加入購物車側邊欄與遮罩 (請補齊) -->
+
+    <script src="./js/script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch('products.json')
+                .then(response => response.json())
+                .then(data => {
+                    const tapGroup = document.getElementById('tapestry-group');
+                    const coasGroup = document.getElementById('coaster-group');
+
+                    Object.keys(data).forEach(id => {
+                        const p = data[id];
+                        if (p.category === 'decor') {
+                            const itemHTML = `
+                                <a href="product.html?id=${id}" class="category-item">
+                                    <div class="item-card">
+                                        <div class="item-img-box">
+                                            <img src="${p.mainImg}" alt="${p.name}">
+                                        </div>
+                                        <div class="item-info">
+                                            <h3>${p.name}</h3>
+                                            <p class="item-price">NT. ${p.price}</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            `;
+
+                            if (p.subCategory === 'tapestry') {
+                                tapGroup.innerHTML += itemHTML;
+                            } else if (p.subCategory === 'coaster') {
+                                coasGroup.innerHTML += itemHTML;
+                            }
+                        }
+                    });
+                });
+        });
+    </script>
+</body>
+</html>
